@@ -62,7 +62,6 @@ def home():
 
 # 5. Run the application
 if __name__ == "__main__":
-    # In a production environment (like Render), Flask automatically handles
-    # host and port if you use a service like Gunicorn.
-    # For local testing, this is fine:
-    app.run(debug=True)
+    port = int(os.environ.get("PORT",5000))
+    app.run(host="0.0.0.0",port=port)
+
